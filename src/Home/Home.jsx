@@ -11,14 +11,14 @@ function Home() {
         </div>
       </div>
       <div className={styles.container}>
-        <div className={styles.navBox}>
+        <div className={styles.laptop}>
           <h2>Shop Laptops</h2>
         </div>
-        <div className={styles.navBox}>
-          <h2>Shop Headphones</h2>
-        </div>
-        <div className={styles.navBox}>
+        <div className={styles.phone}>
           <h2>Shop Phones</h2>
+        </div>
+        <div className={styles.headphone}>
+          <h2>Shop Headphones</h2>
         </div>
       </div>
     </div>
