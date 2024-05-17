@@ -9,3 +9,31 @@
 .header {
   margin-right: auto;
 }
+
+.searchBar{
+  display: flex;
+  align-items: center;
+}
+
+.searchBar > input {
+  height: 35px;
+  width: 20vw;
+  border-radius: 30px;
+  border: none;
+  background-color: rgb(241, 241, 241);
+  padding: 0;
+  padding-left: 10px;
+  padding-right: 50px;
+}
+
+.searchButton {
+  background-image: url(../assets/search.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: none;
+  content: "";
+  background-size: contain;
+  height: 25px;
+  width: 25px;
+  transform: translateX(-50px);
+}
