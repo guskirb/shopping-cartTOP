@@ -35,7 +35,7 @@
   background-size: contain;
   height: 25px;
   width: 25px;
-  transform: translateX(-50px);
+  transform: translateX(-45px);
 }
 
 .saleBar {
@@ -57,7 +57,7 @@
 
 .saleBar p {
   margin: 0;
-  margin-top: -10px;
+  margin-top: -5px;
 }
 
 .deliveryIcon {
@@ -78,6 +78,70 @@
   background-size: contain;
   height: 40px;
   width: 40px;
+}
+
+footer {
+  height: 40vh;
+  background-color: #0f0f0f;
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  gap: 2vh;
+}
+
+.footerLinks {
+  display: flex;
+  justify-content: center;
+  gap: 15vw;
+  margin-top: 30px;
+}
+
+footer h2 {
+  padding: 5px;
+}
+
+footer li {
+  list-style: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+footer ul:last-child li {
+  cursor: default;
+}
+
+.logos {
+  display: flex;
+  margin-left: auto;
+  gap: 10px;
+  transform: translateX(-8vw);
+}
+
+.logoImg {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  content: "";
+  cursor: pointer;
+}
+
+.facebook {
+  composes: logoImg;
+  background-image: url(../assets/facebook.svg);
+}
+
+.twitter {
+  composes: logoImg;
+  background-image: url(../assets/twitter.svg);
+}
+
+.youtube {
+  composes: logoImg;
+  background-image: url(../assets/youtube.svg);
 }
 
 @media only screen and (max-width: 1450px) {
