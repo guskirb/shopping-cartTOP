@@ -1,0 +1,32 @@
+.banner {
+  width: 100vw;
+  background-image: url("../assets/banner.jpg");
+  background-color: #000000;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 200px -300px;
+  height: 70vh;
+  transition: all 1s ease-in-out;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.banner:hover {
+  background-position: 200px -600px;
+}
+
+.bannerText {
+  margin-right: 50%;
+}
+
+@media only screen and (max-width: 1450px) {
+  .banner {
+    background-position: 100px 0;
+  }
+  .banner:hover {
+    background-position: 150px 0;
+  }
+}
