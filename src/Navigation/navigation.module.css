@@ -3,14 +3,14 @@
   align-items: center;
   width: 1280px;
   gap: 20px;
-  padding: 1.2rem;
+  padding-block: 1.2rem;
 }
 
 .header {
   margin-right: auto;
 }
 
-.searchBar{
+.searchBar {
   display: flex;
   align-items: center;
 }
@@ -36,4 +36,52 @@
   height: 25px;
   width: 25px;
   transform: translateX(-50px);
+}
+
+.saleBar {
+  height: 60px;
+  width: 100%;
+  background-color: rgb(245, 38, 38);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12vw;
+  color: white;
+}
+
+.saleBar > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.saleBar p {
+  margin: 0;
+  margin-top: -10px;
+}
+
+.deliveryIcon {
+  content: "";
+  background-image: url(../assets/delivery.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+}
+
+.collectIcon {
+  content: "";
+  background-image: url(../assets/store.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+}
+
+@media only screen and (max-width: 1450px) {
+  .navBar {
+    width: 90vw;
+  }
 }

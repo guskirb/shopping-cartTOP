@@ -1,5 +1,13 @@
+.homeContainer {
+  display: flex;
+  flex-flow: column;
+  align-items:center;
+  gap: 50px;
+  width: 100%
+}
+
 .banner {
-  width: 100vw;
+  width: 100%;
   background-image: url("../assets/banner.jpg");
   background-color: #000000;
   background-size: cover;
@@ -15,11 +23,27 @@
 }
 
 .banner:hover {
-  background-position: 200px -600px;
+  background-position: 220px -320px;
 }
 
 .bannerText {
   margin-right: 50%;
+}
+
+.container {
+  margin: 0;
+  width: 1280px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+.navBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aqua;
+  height: 200px;
 }
 
 @media only screen and (max-width: 1450px) {
@@ -27,6 +51,6 @@
     background-position: 100px 0;
   }
   .banner:hover {
-    background-position: 150px 0;
+    background-position: 110px 0;
   }
 }
