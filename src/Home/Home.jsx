@@ -1,4 +1,5 @@
 import styles from "./home.module.css";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -11,15 +12,21 @@ function Home() {
         </div>
       </div>
       <div className={styles.container}>
-        <div className={styles.laptop}>
-          <h2>Shop Laptops</h2>
-        </div>
-        <div className={styles.phone}>
-          <h2>Shop Phones</h2>
-        </div>
+        <Link to="products/type=laptop">
+          <div className={styles.laptop}>
+            <h2>Shop Laptops</h2>
+          </div>
+        </Link>
+        <Link to="products/type=mobile">
+          <div className={styles.phone}>
+            <h2>Shop Phones</h2>
+          </div>
+        </Link>
+        <Link to="products/type=audio">
         <div className={styles.headphone}>
-          <h2>Shop Headphones</h2>
+          <h2>Shop Audio</h2>
         </div>
+        </Link>
       </div>
     </div>
   );

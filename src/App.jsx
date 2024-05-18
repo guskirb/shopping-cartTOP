@@ -1,13 +1,11 @@
-import { useState } from 'react'
-import './App.css'
-import Navigation from './Navigation/Navigation'
-import Shipping from './Navigation/Shipping'
-import Home from './Home/Home'
-import Footer from './Navigation/Footer'
+import { useState } from "react";
+import "./App.css";
+import Navigation from "./Navigation/Navigation";
+import Shipping from "./Navigation/Shipping";
+import Home from "./Home/Home";
+import Footer from "./Navigation/Footer";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <Navigation />
@@ -15,7 +13,7 @@ function App() {
       <Home />
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

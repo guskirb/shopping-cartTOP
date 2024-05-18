@@ -8,6 +8,11 @@
 
 .header {
   margin-right: auto;
+  color: #000000;
+}
+
+.header:hover {
+  color: #000000;
 }
 
 .searchBar {
@@ -87,14 +92,13 @@ footer {
   color: white;
   display: flex;
   flex-flow: column;
-  justify-content: flex-start;
+  justify-content: space-around;
   gap: 2vh;
 }
 
 .footerLinks {
   display: flex;
   justify-content: center;
-  gap: 15vw;
   margin-top: 30px;
 }
 
@@ -114,9 +118,8 @@ footer ul:last-child li {
 
 .logos {
   display: flex;
-  margin-left: auto;
+  justify-content: center;
   gap: 10px;
-  transform: translateX(-8vw);
 }
 
 .logoImg {
