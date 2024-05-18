@@ -17,6 +17,8 @@ function Navigation() {
           <button>Shop All</button>
         </Link>
         <button>About</button>
+        <div className={styles.shoppingCart}></div>
+        <div className={styles.cartNum}>1</div>
       </div>
     </>
   );
