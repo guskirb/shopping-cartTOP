@@ -6,12 +6,12 @@ import Shipping from "../Navigation/Shipping";
 import Footer from "../Navigation/Footer";
 import styles from "./products.module.css";
 
-function Products() {
+function Products({ handleSearch, search}) {
   const location = useLocation();
   const { params } = useParams();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [search, setSearch] = useState(location.state);
+  const [filter, setFilter] = useState(search);
 
   useEffect(() => {
     fetch(
@@ -25,12 +25,12 @@ function Products() {
   }, [params]);
 
   useEffect(() => {
-    setSearch(location.state);
+    setFilter(location.state);
   }, [location]);
 
   const listProducts = products
     .filter((item) =>
-      item.title.toLowerCase().includes(search === null ? "" : search)
+      item.title.toLowerCase().includes(filter === null ? "" : filter)
     )
     .map((item) => (
       <div className={styles.productBox} key={item.id}>
@@ -49,7 +49,7 @@ function Products() {
 
   return (
     <>
-      <Navigation />
+      <Navigation handleSearch={handleSearch} search={search} />
       <Shipping />
       {loading ? (
         <div>loading</div>

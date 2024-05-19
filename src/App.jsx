@@ -1,20 +1,33 @@
 import { useState } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
-import Navigation from "./Navigation/Navigation";
-import Shipping from "./Navigation/Shipping";
 import Home from "./Home/Home";
-import Footer from "./Navigation/Footer";
+import Products from "./Products/Products";
 
 function App() {
+  const [filter, setFilter] = useState('');
+  const [search, setSearch] = useState("");
 
-  return (
-    <>
-      <Navigation/>
-      <Shipping />
-      <Home />
-      <Footer />
-    </>
-  );
+  function handleSearch(e) {
+    setSearch(e.target.value.toLowerCase());
+  }
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home handleSearch={handleSearch} search={search}/>,
+    },
+    {
+      path: "products",
+      element: <Products handleSearch={handleSearch} search={search}/>,
+    },
+    {
+      path: "products/:params",
+      element: <Products handleSearch={handleSearch} search={search}/>,
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 }
 
 export default App;

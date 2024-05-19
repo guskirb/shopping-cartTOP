@@ -2,13 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./navigation.module.css";
 import { Link } from "react-router-dom";
 
-function Navigation({ handleSearch }) {
-  const [search, setSearch] = useState("");
-
-  function handleSearch(e) {
-    setSearch(e.target.value.toLowerCase());
-  }
-
+function Navigation({ handleSearch, search }) {
   return (
     <>
       <div className={styles.navBar}>
