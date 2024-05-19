@@ -6,12 +6,18 @@ import Shipping from "../Navigation/Shipping";
 import Footer from "../Navigation/Footer";
 import styles from "./products.module.css";
 
-function Products({ handleSearch, search }) {
+function Products({
+  products,
+  setProducts,
+  handleSearch,
+  search,
+  cart,
+  handleSetCart,
+}) {
   const location = useLocation();
   const { params } = useParams();
-  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [filter, setFilter] = useState(search);
+  const [filter, setFilter] = useState(location.state);
 
   useEffect(() => {
     fetch(
@@ -42,7 +48,9 @@ function Products({ handleSearch, search }) {
         </h2>
         <div className={styles.productLower}>
           <h2>{`$${item.price}.00`}</h2>
-          <button>Add to Cart</button>
+          <button id={item.id} onClick={handleSetCart}>
+            Add to Cart
+          </button>
         </div>
       </div>
     ));
@@ -52,6 +60,8 @@ function Products({ handleSearch, search }) {
       <Navigation
         handleSearch={handleSearch}
         search={search}
+        cart={cart}
+        handleSetCart={handleSetCart}
       />
       <Shipping />
       {loading ? (

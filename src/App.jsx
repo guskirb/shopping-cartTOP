@@ -5,13 +5,18 @@ import Home from "./Home/Home";
 import Products from "./Products/Products";
 
 function App() {
-  const [filter, setFilter] = useState("");
+  const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
+  const [cart, setCart] = useState([]);
 
   function handleSearch(e) {
     setSearch(e.target.value.toLowerCase());
   }
-  console.log(search)
+
+  function handleSetCart(e) {
+    console.log(e);
+  }
+  
   const router = createBrowserRouter([
     {
       path: "/",
@@ -19,6 +24,8 @@ function App() {
         <Home
           handleSearch={handleSearch}
           search={search}
+          cart={cart}
+          handleSetCart={handleSetCart}
         />
       ),
     },
@@ -26,8 +33,12 @@ function App() {
       path: "products",
       element: (
         <Products
+          products={products}
+          setProducts={setProducts}
           handleSearch={handleSearch}
           search={search}
+          cart={cart}
+          handleSetCart={handleSetCart}
         />
       ),
     },
@@ -35,8 +46,12 @@ function App() {
       path: "products/:params",
       element: (
         <Products
+        products={products}
+          setProducts={setProducts}
           handleSearch={handleSearch}
           search={search}
+          cart={cart}
+          handleSetCart={handleSetCart}
         />
       ),
     },

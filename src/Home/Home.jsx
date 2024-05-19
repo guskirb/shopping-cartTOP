@@ -4,10 +4,15 @@ import Navigation from "../Navigation/Navigation";
 import Shipping from "../Navigation/Shipping";
 import Footer from "../Navigation/Footer";
 
-function Home({ handleSearch, search }) {
+function Home({ handleSearch, search, cart, handleSetCart }) {
   return (
     <>
-      <Navigation handleSearch={handleSearch} search={search} />
+      <Navigation
+        handleSearch={handleSearch}
+        search={search}
+        cart={cart}
+        handleSetCart={handleSetCart}
+      />
       <Shipping />
       <div className={styles.homeContainer}>
         <div className={styles.banner}>

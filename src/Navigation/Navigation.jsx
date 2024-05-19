@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./navigation.module.css";
 import { Link } from "react-router-dom";
 
-function Navigation({ handleSearch, search }) {
+function Navigation({ handleSearch, search, cart, handleSetCart }) {
   const navigate = useNavigate();
 
   function handleKeyDown(e) {
@@ -15,7 +15,7 @@ function Navigation({ handleSearch, search }) {
   return (
     <>
       <div className={styles.navBar}>
-        <Link to="/" className={styles.header}>
+        <Link to="/" className={styles.header} >
           <h1>TechStore</h1>
         </Link>
         <div className={styles.searchBar}>
@@ -23,7 +23,6 @@ function Navigation({ handleSearch, search }) {
             type="text"
             onChange={handleSearch}
             onKeyDown={handleKeyDown}
-            value={search}
           ></input>
           <Link to="/products" state={search}>
             <button className={styles.searchButton}></button>
