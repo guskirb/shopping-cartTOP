@@ -22,15 +22,35 @@ function App() {
       if (element.item.id === parseInt(e.target.id)) {
         element.amount++;
         duplicate = true;
-        setCart([...cart])
+        setCart([...cart]);
       }
     });
 
     if (!duplicate) {
       setCart([...cart, { item, amount: 1 }]);
     }
+  }
 
-    console.log(cart);
+  function addAmount(e) {
+    cart.forEach((element) => {
+      if (element.item.id === parseInt(e.target.id)) {
+        element.amount++;
+        setCart([...cart]);
+      }
+    })
+  }
+
+  function removeAmount(e) {
+    cart.forEach((element) => {
+      if (element.item.id === parseInt(e.target.id)) {
+        if (element.amount === 1){
+          cart.splice(cart.indexOf(element), 1)
+          setCart([...cart]);
+        }
+        element.amount--;
+        setCart([...cart]);
+      }
+    });
   }
 
   const router = createBrowserRouter([
@@ -81,6 +101,8 @@ function App() {
           search={search}
           cart={cart}
           handleSetCart={handleSetCart}
+          addAmount={addAmount}
+          removeAmount={removeAmount}
         />
       ),
     },

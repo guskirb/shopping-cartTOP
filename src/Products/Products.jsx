@@ -28,6 +28,8 @@ function Products({
       .then((res) => res.json())
       .then((data) => setProducts(data.products))
       .finally(setLoading(false));
+
+    return setProducts([]);
   }, [params]);
 
   useEffect(() => {

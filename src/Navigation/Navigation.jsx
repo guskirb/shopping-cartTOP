@@ -43,8 +43,10 @@ function Navigation({ handleSearch, search, cart, handleSetCart }) {
         <button>About</button>
         <Link to="/checkout">
           <div className={styles.shoppingCart}></div>
+          {cartAmount !== 0 && (
+            <div className={styles.cartNum}>{cartAmount}</div>
+          )}
         </Link>
-        {cartAmount !== 0 && <div className={styles.cartNum}>{cartAmount}</div>}
       </div>
     </>
   );
