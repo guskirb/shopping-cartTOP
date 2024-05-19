@@ -43,6 +43,53 @@
   transform: translateX(-45px);
 }
 
+.saleBar {
+  height: 60px;
+  width: 100%;
+  background-color: #f52626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12vw;
+  color: white;
+}
+
+.saleBar h2 {
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.saleBar > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.saleBar p {
+  margin: 0;
+  margin-top: -5px;
+}
+
+.deliveryIcon {
+  content: "";
+  background-image: url(../assets/delivery.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+}
+
+.collectIcon {
+  content: "";
+  background-image: url(../assets/store.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+}
+
 .shoppingCart {
   content: "";
   background-image: url(../assets/cart.svg);
@@ -81,65 +128,60 @@
 .cartContainer {
   display: flex;
   flex-flow: column;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.emptyMessage {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 5vw;
+  font-size: 1.5em;
 }
 
 .cartItem {
   display: flex;
   border: 1px solid red;
   margin-block: 10px;
+  width: 100%;
+  gap: 10px;
 }
 
 .cartItem img {
- width: 200px;
+  width: 10vw;
+  padding: 20px;
+}
+
+.cartItem > div {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+}
+
+.cartItem h2 {
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+.cartPrice {
+  display: flex;
+  justify-content: space-between;
+}
+
+.quantity {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .checkout {
   background-color: red;
   border-radius: 10px;
   margin-block: 10px;
-}
-
-.saleBar {
-  height: 60px;
-  width: 100%;
-  background-color: #f52626;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12vw;
-  color: white;
-}
-
-.saleBar > div {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.saleBar p {
-  margin: 0;
-  margin-top: -5px;
-}
-
-.deliveryIcon {
-  content: "";
-  background-image: url(../assets/delivery.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  height: 40px;
-  width: 40px;
-}
-
-.collectIcon {
-  content: "";
-  background-image: url(../assets/store.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  height: 40px;
-  width: 40px;
 }
 
 footer {
@@ -198,6 +240,11 @@ footer ul:last-child li {
 .twitter {
   composes: logoImg;
   background-image: url(../assets/twitter.svg);
+}
+
+.github {
+  composes: logoImg;
+  background-image: url(../assets/github.svg);
 }
 
 .youtube {
