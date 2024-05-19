@@ -2,6 +2,7 @@ import styles from "./navigation.module.css";
 import Navigation from "../Navigation/Navigation";
 import Shipping from "../Navigation/Shipping";
 import Footer from "../Navigation/Footer";
+import { useEffect, useState } from "react";
 
 function Cart({
   products,
@@ -14,6 +15,12 @@ function Cart({
   removeAmount,
   removeItem,
 }) {
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    setTotal(cart.reduce((acc, item) => (acc += item.item.price * item.amount), 0));
+  }, [cart]);
+
   const listCart = cart.map((item) => (
     <div className={styles.cartItem} key={item.item.id}>
       <img src={item.item.image}></img>
@@ -61,7 +68,10 @@ function Cart({
         ) : (
           <>
             <div className={styles.cartContainer}>{listCart}</div>
-            <div className={styles.checkout} />
+            <div className={styles.checkout}>
+              <h2>Total</h2>
+              <h2>{"$"+ total + ".00"}</h2>
+            </div>
           </>
         )}
       </div>
