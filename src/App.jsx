@@ -6,9 +6,10 @@ import Home from "./Home/Home";
 import Footer from "./Navigation/Footer";
 
 function App() {
+
   return (
     <>
-      <Navigation />
+      <Navigation/>
       <Shipping />
       <Home />
       <Footer />

@@ -1,8 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styles from "./navigation.module.css";
 import { Link } from "react-router-dom";
 
-function Navigation() {
+function Navigation({ handleSearch }) {
+  const [search, setSearch] = useState("");
+
+  function handleSearch(e) {
+    setSearch(e.target.value.toLowerCase());
+  }
+
   return (
     <>
       <div className={styles.navBar}>
@@ -10,10 +16,12 @@ function Navigation() {
           <h1>TechStore</h1>
         </Link>
         <div className={styles.searchBar}>
-          <input type="text"></input>
-          <button className={styles.searchButton}></button>
+          <input type="text" onChange={handleSearch}></input>
+          <Link to="/products" state={search}>
+            <button className={styles.searchButton}></button>
+          </Link>
         </div>
-        <Link to="products">
+        <Link to="/products" state="">
           <button>Shop All</button>
         </Link>
         <button>About</button>
