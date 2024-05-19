@@ -6,9 +6,11 @@ function Home() {
     <div className={styles.homeContainer}>
       <div className={styles.banner}>
         <div className={styles.bannerText}>
-          <h1 className={styles.bannerHeader}>The iPhone</h1>
-          <p>New Camera. New Design.</p>
-          <button>Buy Now</button>
+          <Link to="/products" state="iphone">
+            <h1 className={styles.bannerHeader}>The iPhone</h1>
+            <p>New Camera. New Design.</p>
+            <button>Buy Now</button>
+          </Link>
         </div>
       </div>
       <div className={styles.container}>
@@ -23,9 +25,9 @@ function Home() {
           </div>
         </Link>
         <Link to="products/type=audio">
-        <div className={styles.headphone}>
-          <h2>Shop Audio</h2>
-        </div>
+          <div className={styles.headphone}>
+            <h2>Shop Audio</h2>
+          </div>
         </Link>
       </div>
     </div>

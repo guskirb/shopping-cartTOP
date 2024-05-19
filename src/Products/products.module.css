@@ -1,6 +1,7 @@
 .productsBody {
   display: flex;
   justify-content: center;
+  min-height: 50vh;
 }
 
 .categories {
@@ -26,7 +27,7 @@
   grid-column: 2/3;
   grid-template-columns: repeat(3, 1fr);
   gap: 0px;
-  width: 70%;
+  width: 60vw;
   margin-block: 30px;
 }
 

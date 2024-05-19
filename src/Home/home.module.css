@@ -30,6 +30,11 @@
   margin-right: 50%;
 }
 
+.bannerText h1,
+p {
+  color: white;
+}
+
 .container {
   margin: 0;
   width: 1280px;
@@ -58,7 +63,7 @@
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
-.navBox>h2 {
+.navBox > h2 {
   margin: 10px;
   font-weight: 100;
 }
