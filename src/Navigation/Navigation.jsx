@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 function Navigation({ handleSearch, search, cart, handleSetCart }) {
   const navigate = useNavigate();
+  const [cartAmount, setCartAmount] = useState(0);
 
   function handleKeyDown(e) {
     if (e.key === "Enter") {
@@ -12,10 +13,18 @@ function Navigation({ handleSearch, search, cart, handleSetCart }) {
     }
   }
 
+  useEffect(() => {
+    let amount = 0;
+
+    cart.forEach((item) => (amount += item.amount));
+
+    setCartAmount(amount);
+  }, [cart]);
+
   return (
     <>
       <div className={styles.navBar}>
-        <Link to="/" className={styles.header} >
+        <Link to="/" className={styles.header}>
           <h1>TechStore</h1>
         </Link>
         <div className={styles.searchBar}>
@@ -32,8 +41,10 @@ function Navigation({ handleSearch, search, cart, handleSetCart }) {
           <button>Shop All</button>
         </Link>
         <button>About</button>
-        <div className={styles.shoppingCart}></div>
-        <div className={styles.cartNum}>1</div>
+        <Link to="/checkout">
+          <div className={styles.shoppingCart}></div>
+        </Link>
+        {cartAmount !== 0 && <div className={styles.cartNum}>{cartAmount}</div>}
       </div>
     </>
   );
