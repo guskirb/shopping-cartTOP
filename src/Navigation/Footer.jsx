@@ -35,6 +35,9 @@ function Footer() {
       <div className={styles.logos}>
         <div className={styles.facebook}></div>
         <div className={styles.twitter}></div>
+        <a href="https://github.com/guskirb">
+          <div className={styles.github}></div>
+        </a>
         <div className={styles.youtube}></div>
       </div>
     </footer>
