@@ -37,17 +37,26 @@ function App() {
         element.amount++;
         setCart([...cart]);
       }
-    })
+    });
   }
 
   function removeAmount(e) {
     cart.forEach((element) => {
       if (element.item.id === parseInt(e.target.id)) {
-        if (element.amount === 1){
-          cart.splice(cart.indexOf(element), 1)
+        if (element.amount === 1) {
+          cart.splice(cart.indexOf(element), 1);
           setCart([...cart]);
         }
         element.amount--;
+        setCart([...cart]);
+      }
+    });
+  }
+
+  function removeItem(e) {
+    cart.forEach((element) => {
+      if (element.item.id === parseInt(e.target.id)) {
+        cart.splice(cart.indexOf(element), 1);
         setCart([...cart]);
       }
     });
@@ -103,6 +112,7 @@ function App() {
           handleSetCart={handleSetCart}
           addAmount={addAmount}
           removeAmount={removeAmount}
+          removeItem={removeItem}
         />
       ),
     },

@@ -99,6 +99,11 @@
   height: 35px;
   width: 35px;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.shoppingCart:hover {
+  scale: 1.1;
 }
 
 .cartNum {
@@ -106,6 +111,7 @@
   background-color: #f52626;
   color: white;
   font-size: 0.6em;
+  font-weight: 500;
   height: 20px;
   width: 20px;
   display: flex;
@@ -115,6 +121,11 @@
   right: 14.2vw;
   top: 30px;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.shoppingCart:hover + .cartNum {
+  scale: 1.1;
 }
 
 .checkoutContainer {
@@ -154,6 +165,17 @@
   padding: 20px;
 }
 
+.cartUpper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cartUpper button{
+  height: 28px;
+  width: 28px;
+  background-color: transparent;
+}
+
 .cartItem > div {
   display: flex;
   flex-flow: column;
@@ -167,6 +189,14 @@
   font-size: 1.2em;
 }
 
+.trash {
+  background-image: url(../assets/trash.svg);
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
 .cartPrice {
   display: flex;
   justify-content: space-between;
@@ -176,6 +206,40 @@
   display: flex;
   gap: 10px;
   align-items: center;
+}
+
+.quantity > button {
+  height: 25px;
+  width: 25px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: #000000;
+  transition: all 0.1s ease-in-out;
+}
+
+.quantity button:hover {
+  transform: scale(1.2);
+}
+
+.plus {
+  background-image: url(../assets/plus.svg);
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.minus {
+  background-image: url(../assets/minus.svg);
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.quantity h2 {
+  width: 20px;
+  text-align: center;
 }
 
 .checkout {

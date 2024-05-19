@@ -12,21 +12,33 @@ function Cart({
   handleSetCart,
   addAmount,
   removeAmount,
+  removeItem,
 }) {
   const listCart = cart.map((item) => (
     <div className={styles.cartItem} key={item.item.id}>
       <img src={item.item.image}></img>
       <div>
-        <h2>{item.item.title}</h2>
+        <div className={styles.cartUpper}>
+          <h2>{item.item.title}</h2>
+          <button
+            id={item.item.id}
+            onClick={removeItem}
+            className={styles.trash}
+          ></button>
+        </div>
         <div className={styles.cartPrice}>
           <div className={styles.quantity}>
-            <button id={item.item.id} onClick={removeAmount}>
-              -
-            </button>
+            <button
+              id={item.item.id}
+              onClick={removeAmount}
+              className={styles.minus}
+            ></button>
             <h2>{item.amount}</h2>
-            <button id={item.item.id} onClick={addAmount}>
-              +
-            </button>
+            <button
+              id={item.item.id}
+              onClick={addAmount}
+              className={styles.plus}
+            ></button>
           </div>
           <h2>{"$" + item.item.price * item.amount + ".00"}</h2>
         </div>
