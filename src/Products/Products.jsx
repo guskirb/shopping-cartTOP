@@ -6,7 +6,7 @@ import Shipping from "../Navigation/Shipping";
 import Footer from "../Navigation/Footer";
 import styles from "./products.module.css";
 
-function Products({ handleSearch, search}) {
+function Products({ handleSearch, search }) {
   const location = useLocation();
   const { params } = useParams();
   const [products, setProducts] = useState([]);
@@ -49,7 +49,10 @@ function Products({ handleSearch, search}) {
 
   return (
     <>
-      <Navigation handleSearch={handleSearch} search={search} />
+      <Navigation
+        handleSearch={handleSearch}
+        search={search}
+      />
       <Shipping />
       {loading ? (
         <div>loading</div>

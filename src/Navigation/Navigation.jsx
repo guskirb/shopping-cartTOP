@@ -1,8 +1,17 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./navigation.module.css";
 import { Link } from "react-router-dom";
 
 function Navigation({ handleSearch, search }) {
+  const navigate = useNavigate();
+
+  function handleKeyDown(e) {
+    if (e.key === "Enter") {
+      navigate("/products", { state: search });
+    }
+  }
+
   return (
     <>
       <div className={styles.navBar}>
@@ -10,7 +19,12 @@ function Navigation({ handleSearch, search }) {
           <h1>TechStore</h1>
         </Link>
         <div className={styles.searchBar}>
-          <input type="text" onChange={handleSearch}></input>
+          <input
+            type="text"
+            onChange={handleSearch}
+            onKeyDown={handleKeyDown}
+            value={search}
+          ></input>
           <Link to="/products" state={search}>
             <button className={styles.searchButton}></button>
           </Link>
