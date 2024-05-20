@@ -3,7 +3,7 @@ import Navigation from "../Navigation/Navigation";
 import Shipping from "../Navigation/Shipping";
 import Footer from "../Navigation/Footer";
 import { useEffect, useState } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 function Cart({
   handleSearch,
@@ -17,7 +17,9 @@ function Cart({
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
-    setTotal(cart.reduce((acc, item) => (acc += item.item.price * item.amount), 0));
+    setTotal(
+      cart.reduce((acc, item) => (acc += item.item.price * item.amount), 0)
+    );
   }, [cart]);
 
   const listCart = cart.map((item) => (
@@ -25,7 +27,7 @@ function Cart({
       <img src={item.item.image}></img>
       <div>
         <div className={styles.cartUpper}>
-          <h2>{item.item.title}</h2>
+          <h2 className={styles.cartTitle}>{item.item.title}</h2>
           <button
             id={item.item.id}
             onClick={removeItem}
@@ -61,18 +63,20 @@ function Cart({
         handleSetCart={handleSetCart}
       />
       <Shipping />
-      <div className={styles.checkoutContainer}>
-        {cart.length === 0 ? (
-          <p className={styles.emptyMessage}>Your cart is empty.</p>
-        ) : (
-          <>
-            <div className={styles.cartContainer}>{listCart}</div>
-            <div className={styles.checkout}>
-              <h2>Total</h2>
-              <h2>{"$"+ total + ".00"}</h2>
-            </div>
-          </>
-        )}
+      <div className={styles.checkoutBackground}>
+        <div className={styles.checkoutContainer}>
+          {cart.length === 0 ? (
+            <p className={styles.emptyMessage}>Your cart is empty.</p>
+          ) : (
+            <>
+              <div className={styles.cartContainer}>{listCart}</div>
+              <div className={styles.checkout}>
+                <h2>Total</h2>
+                <h2>{"$" + total + ".00"}</h2>
+              </div>
+            </>
+          )}
+        </div>
       </div>
       <Footer />
     </>
@@ -81,6 +85,6 @@ function Cart({
 
 Cart.propTypes = {
   cart: PropTypes.array,
-}
+};
 
 export default Cart;

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./navigation.module.css";
 import { Link } from "react-router-dom";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 function Navigation({ handleSearch, search, cart, handleSetCart }) {
   const navigate = useNavigate();
@@ -41,7 +41,9 @@ function Navigation({ handleSearch, search, cart, handleSetCart }) {
         <Link to="/products" state="">
           <button>Shop All</button>
         </Link>
-        <button>About</button>
+        <a href="https://github.com/guskirb">
+          <button>About</button>
+        </a>
         <Link to="/checkout">
           <div className={styles.shoppingCart}></div>
           {cartAmount !== 0 && (
@@ -55,6 +57,6 @@ function Navigation({ handleSearch, search, cart, handleSetCart }) {
 
 Navigation.propTypes = {
   search: PropTypes.string,
-}
+};
 
 export default Navigation;
