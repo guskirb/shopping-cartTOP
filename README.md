@@ -1,8 +1,11 @@
-# React + Vite
+# Shopping Cart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A shopping cart app built using Vite + React with CSS modules. Fetches data from [fakeStoreApi](https://fakestoreapi.in/).
 
-Currently, two official plugins are available:
+## Features
+* Product search allows you to search for an item by product name.
+* Category filter allows you to filter by category.
+* Add and remove products from your cart.
+* Increase or decrease the amount per item.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### [Live Demo](https://main--strong-profiterole-d88f4a.netlify.app/)
