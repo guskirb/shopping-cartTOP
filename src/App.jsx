@@ -104,8 +104,6 @@ function App() {
       path: "checkout",
       element: (
         <Cart
-          products={products}
-          setProducts={setProducts}
           handleSearch={handleSearch}
           search={search}
           cart={cart}

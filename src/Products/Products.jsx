@@ -5,6 +5,7 @@ import Navigation from "../Navigation/Navigation";
 import Shipping from "../Navigation/Shipping";
 import Footer from "../Navigation/Footer";
 import styles from "./products.module.css";
+import PropTypes from 'prop-types';
 
 function Products({
   products,
@@ -101,6 +102,10 @@ function Products({
       )}
     </>
   );
+}
+
+Products.propTypes = {
+  products: PropTypes.array,
 }
 
 export default Products;

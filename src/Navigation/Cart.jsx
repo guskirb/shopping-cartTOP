@@ -3,10 +3,9 @@ import Navigation from "../Navigation/Navigation";
 import Shipping from "../Navigation/Shipping";
 import Footer from "../Navigation/Footer";
 import { useEffect, useState } from "react";
+import PropTypes from 'prop-types';
 
 function Cart({
-  products,
-  setProducts,
   handleSearch,
   search,
   cart,
@@ -78,6 +77,10 @@ function Cart({
       <Footer />
     </>
   );
+}
+
+Cart.propTypes = {
+  cart: PropTypes.array,
 }
 
 export default Cart;

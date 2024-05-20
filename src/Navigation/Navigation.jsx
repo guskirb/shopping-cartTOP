@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./navigation.module.css";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 function Navigation({ handleSearch, search, cart, handleSetCart }) {
   const navigate = useNavigate();
@@ -50,6 +51,10 @@ function Navigation({ handleSearch, search, cart, handleSetCart }) {
       </div>
     </>
   );
+}
+
+Navigation.propTypes = {
+  search: PropTypes.string,
 }
 
 export default Navigation;
