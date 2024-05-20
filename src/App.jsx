@@ -4,6 +4,7 @@ import "./App.css";
 import Home from "./Home/Home";
 import Products from "./Products/Products";
 import Cart from "./Navigation/Cart";
+import ErrorPage from "./ErrorPage";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -73,6 +74,14 @@ function App() {
           handleSetCart={handleSetCart}
         />
       ),
+      errorElement: (
+        <ErrorPage
+          handleSearch={handleSearch}
+          search={search}
+          cart={cart}
+          handleSetCart={handleSetCart}
+        />
+      ),
     },
     {
       path: "products",
@@ -80,6 +89,14 @@ function App() {
         <Products
           products={products}
           setProducts={setProducts}
+          handleSearch={handleSearch}
+          search={search}
+          cart={cart}
+          handleSetCart={handleSetCart}
+        />
+      ),
+      errorElement: (
+        <ErrorPage
           handleSearch={handleSearch}
           search={search}
           cart={cart}
@@ -99,6 +116,14 @@ function App() {
           handleSetCart={handleSetCart}
         />
       ),
+      errorElement: (
+        <ErrorPage
+          handleSearch={handleSearch}
+          search={search}
+          cart={cart}
+          handleSetCart={handleSetCart}
+        />
+      ),
     },
     {
       path: "cart",
@@ -111,6 +136,14 @@ function App() {
           addAmount={addAmount}
           removeAmount={removeAmount}
           removeItem={removeItem}
+        />
+      ),
+      errorElement: (
+        <ErrorPage
+          handleSearch={handleSearch}
+          search={search}
+          cart={cart}
+          handleSetCart={handleSetCart}
         />
       ),
     },

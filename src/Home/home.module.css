@@ -100,3 +100,43 @@ p {
     background-position: 110px 0;
   }
 }
+
+.errorPage {
+  min-height: 60vh;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 400px;
+  text-align: center;
+}
+
+.errorPage h1 {
+  font-weight: 400;
+}
+
+.errorPage h2 {
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+.errorPage p {
+  font-size: 1.2em;
+  font-weight: 300;
+  color: black;
+}
+
+.errorPage button {
+  border-radius: 20px;
+  background-color: #292929;
+  color: white;
+  transition: all 0.1s ease-in-out;
+  font-weight: 400;
+}
+
+.errorPage button:hover {
+  background-color: #000000;
+  transform: scale(1.01);
+}
+
