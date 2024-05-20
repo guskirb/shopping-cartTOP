@@ -1,6 +1,6 @@
 # Shopping Cart
 
-A shopping cart app built using Vite + React with CSS modules. Fetches data from [fakeStoreApi](https://fakestoreapi.in/).
+A shopping cart app built using Vite + React with CSS modules. Fetches data from [FakeStoreApi](https://fakestoreapi.in/).
 
 ## Features
 * Product search allows you to search for an item by product name.
