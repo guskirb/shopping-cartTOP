@@ -101,7 +101,7 @@ function App() {
       ),
     },
     {
-      path: "checkout",
+      path: "cart",
       element: (
         <Cart
           handleSearch={handleSearch}

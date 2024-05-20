@@ -26,6 +26,7 @@ function Navigation({ handleSearch, search, cart, handleSetCart }) {
     <>
       <div className={styles.navBar}>
         <Link to="/" className={styles.header}>
+          <div className={styles.logo}></div>
           <h1>TechStore</h1>
         </Link>
         <div className={styles.searchBar}>
@@ -44,7 +45,7 @@ function Navigation({ handleSearch, search, cart, handleSetCart }) {
         <a href="https://github.com/guskirb">
           <button>About</button>
         </a>
-        <Link to="/checkout">
+        <Link to="/cart">
           <div className={styles.shoppingCart}></div>
           {cartAmount !== 0 && (
             <div className={styles.cartNum}>{cartAmount}</div>

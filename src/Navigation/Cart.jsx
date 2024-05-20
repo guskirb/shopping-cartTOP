@@ -54,6 +54,10 @@ function Cart({
     </div>
   ));
 
+  function handleCheckout(e){
+    alert(`You have paid ${"$" + total + ".00"}`)
+  }
+
   return (
     <>
       <Navigation
@@ -71,8 +75,11 @@ function Cart({
             <>
               <div className={styles.cartContainer}>{listCart}</div>
               <div className={styles.checkout}>
-                <h2>Total</h2>
-                <h2>{"$" + total + ".00"}</h2>
+                <div className={styles.checkoutTotal}>
+                  <h2>Total</h2>
+                  <h2>{"$" + total + ".00"}</h2>
+                </div>
+                <button onClick={handleCheckout}>Checkout</button>
               </div>
             </>
           )}
