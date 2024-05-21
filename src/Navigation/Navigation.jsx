@@ -40,10 +40,10 @@ function Navigation({ handleSearch, search, cart, handleSetCart }) {
           </Link>
         </div>
         <Link to="/products" state="">
-          <button>Shop All</button>
+          <button className={styles.navButton}>Shop All</button>
         </Link>
         <a href="https://github.com/guskirb">
-          <button>About</button>
+          <button className={styles.navButton}>About</button>
         </a>
         <Link to="/cart">
           <div className={styles.shoppingCart}></div>

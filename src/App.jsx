@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import Home from "./Home/Home";
 import Products from "./Products/Products";
-import Cart from "./Navigation/Cart";
+import Cart from "./Cart/Cart";
 import ErrorPage from "./ErrorPage";
 
 function App() {

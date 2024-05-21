@@ -20,7 +20,7 @@ function Home({ handleSearch, search, cart, handleSetCart }) {
             <Link to="/products" state="iphone">
               <h1 className={styles.bannerHeader}>The iPhone</h1>
               <p>New Camera. New Design.</p>
-              <button>Buy Now</button>
+              <button className={styles.bannerButton}>Buy Now</button>
             </Link>
           </div>
         </div>

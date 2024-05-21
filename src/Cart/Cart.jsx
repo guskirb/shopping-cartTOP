@@ -1,4 +1,4 @@
-import styles from "./navigation.module.css";
+import styles from "./cart.module.css";
 import Navigation from "../Navigation/Navigation";
 import Shipping from "../Navigation/Shipping";
 import Footer from "../Navigation/Footer";

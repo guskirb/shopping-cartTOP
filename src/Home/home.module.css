@@ -35,6 +35,14 @@ p {
   color: white;
 }
 
+.bannerButton {
+  transition: all 0.1s ease-in-out;
+}
+
+.bannerButton:hover {
+  transform: scale(1.1);
+}
+
 .container {
   margin: 0;
   width: 1280px;
