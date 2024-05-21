@@ -2,7 +2,7 @@ import styles from "./cart.module.css";
 import Navigation from "../Navigation/Navigation";
 import Shipping from "../Navigation/Shipping";
 import Footer from "../Navigation/Footer";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import PropTypes from "prop-types";
 
 function Cart({
@@ -14,11 +14,10 @@ function Cart({
   removeAmount,
   removeItem,
 }) {
-  const [total, setTotal] = useState(0);
-
-  useEffect(() => {
-    setTotal(
-      cart.reduce((acc, item) => (acc += item.item.price * item.amount), 0)
+  const total = useMemo(() => {
+    return cart.reduce(
+      (acc, item) => (acc += item.item.price * item.amount),
+      0
     );
   }, [cart]);
 
@@ -54,8 +53,8 @@ function Cart({
     </div>
   ));
 
-  function handleCheckout(e){
-    alert(`You have paid ${"$" + total + ".00"}`)
+  function handleCheckout(e) {
+    alert(`You have paid ${"$" + total + ".00"}`);
   }
 
   return (
